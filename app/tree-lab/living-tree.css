@@ -1,0 +1,65 @@
+.canopy-lab{min-height:100vh;background:#f4f0e7;color:#153c35;padding-bottom:70px}
+.canopy-lab button{font-family:"Tajawal",sans-serif;cursor:pointer}
+.canopy-lab-hero{padding:53px max(4%,25px) 55px;background:radial-gradient(ellipse at 15% 10%,#365c48 0,transparent 55%),linear-gradient(135deg,#173d34,#102b25);color:#f9f4eb}
+.canopy-lab-hero>*{position:relative;max-width:1100px;margin-right:auto;margin-left:auto}
+.canopy-lab-kicker{display:flex;gap:10px;align-items:center;color:#d9bf89;font-size:12px;font-weight:700}
+.canopy-lab-hero h1{font:700 clamp(37px,4.5vw,67px)/1.3 "Tajawal",serif;margin:12px auto 8px}
+.canopy-lab-hero h1 em{color:#d6b577;font-style:normal}
+.canopy-lab-hero p{max-width:850px;font-size:13px;line-height:2.2;color:#e6ebe3;margin-top:10px}
+.canopy-lab-back{display:inline-flex;align-items:center;gap:7px;margin-top:18px;color:#f6e8be;text-decoration:none;border-bottom:1px solid #ad9870;padding-bottom:5px;font-size:12px}
+.canopy-lab-controls{display:flex;align-items:start;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:1560px;padding:27px 2.5% 19px;margin:auto}
+.canopy-lab-filter{display:flex;flex-wrap:wrap;gap:8px}
+.canopy-lab-filter button{display:inline-flex;align-items:center;gap:6px;background:#fffdf5;border:1px solid #cbd4c7;border-radius:8px;color:#335948;font-size:12px;padding:10px 13px}
+.canopy-lab-filter button.active{background:#23483c;color:#fff9ec;border-color:#23483c}
+.canopy-lab-filter small{border-radius:50px;background:#bdccab2b;padding:1px 5px;font-size:10px}
+.canopy-lab-search{position:relative;display:flex;gap:9px;align-items:center;background:#fffcf4;border:1px solid #d1dacd;border-radius:9px;min-width:min(330px,100%);padding:0 13px;z-index:5}
+.canopy-lab-search input{width:100%;border:0;background:none;outline:none;min-height:45px;font:500 12px "Tajawal",sans-serif;color:#173c35}
+.canopy-lab-results{position:absolute;top:calc(100% + 6px);left:0;right:0;background:#fffefa;box-shadow:0 12px 35px #153c3530;border:1px solid #d9d8c6;max-height:340px;overflow:auto;border-radius:10px}
+.canopy-lab-results button{display:flex;width:100%;justify-content:space-between;align-items:center;padding:9px 12px;border-bottom:1px solid #ede9da;text-align:right;font-size:12px}
+.canopy-lab-results button:hover{background:#f0f3e6}
+.canopy-lab-results small{font-size:10px;color:#72846e}
+.canopy-lab-workspace{display:grid;grid-template-columns:minmax(0,1fr) 285px;align-items:start;gap:15px;max-width:1560px;margin:auto;padding:0 2.5%}
+.canopy-lab-poster-wrap{min-width:0;overflow:hidden;border-radius:13px;background:#fcf7e8;box-shadow:0 15px 50px #263d2d14;border:1px solid #e3d9c4}
+.canopy-lab-toolbar{display:flex;align-items:center;justify-content:space-between;gap:9px;padding:13px 14px;background:#f9f7ee;border-bottom:1px solid #dbdbc8;flex-wrap:wrap}
+.canopy-lab-toolbar>div:first-child{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.canopy-lab-toolbar strong{font-size:12px}
+.canopy-lab-toolbar span{font:500 10px "Tajawal",sans-serif;color:#798472}
+.canopy-lab-actions{display:flex;gap:5px}
+.canopy-lab-actions button{border:1px solid #d8d8c6;background:white;padding:8px;border-radius:7px;color:#315b46;display:grid;place-items:center}
+.canopy-lab-actions button:hover{background:#e8efdf}
+.canopy-lab-poster{width:100%;overflow:hidden;touch-action:pan-y}
+.canopy-lab-svg{display:block;width:100%;height:auto;aspect-ratio:1400/1600;min-height:250px;cursor:default}
+.canopy-person{cursor:pointer;outline:none;transition:opacity .2s;filter:drop-shadow(0 1.5px 1.2px #465c251f)}
+.canopy-person:hover{filter:drop-shadow(0 0 5px #cfb75a)}
+.canopy-person.faded{opacity:.20}
+.canopy-person.on{filter:drop-shadow(0 0 8px #b69039)}
+.canopy-lab-legend{display:flex;justify-content:center;gap:19px;flex-wrap:wrap;padding:14px;background:#fcf8eb;font-size:10px;color:#7e745a}
+.canopy-lab-legend span{display:flex;align-items:center;gap:5px}
+.canopy-lab-legend i{display:inline-block;width:11px;height:13px;border-radius:50% 0 50% 0;transform:rotate(-35deg)}
+.canopy-lab-legend .gold{background:#d8ae55}
+.canopy-lab-legend .green{background:#8bbd2a}
+.canopy-lab-legend .tiny{background:#b4d778;width:8px;height:10px}
+.canopy-lab-inspector{position:sticky;top:20px;background:#fffdf5;border:1px solid #ded9c7;border-radius:13px;padding:18px;color:#244838}
+.canopy-lab-inspector-head{display:flex;align-items:center;gap:10px;font:700 14px "Tajawal",sans-serif;border-bottom:1px solid #ece4d5;padding-bottom:15px}
+.canopy-lab-card{margin:19px 0 15px;text-align:center;background:#f7f6ed;border:1px solid #e9e4cf;padding:20px 12px;border-radius:10px;display:flex;flex-direction:column;gap:8px}
+.canopy-lab-card strong{font:700 30px "Tajawal",serif;color:#264a3b}
+.canopy-lab-card>span{font-size:11px;color:#998453}
+.canopy-lab-card dl{margin:10px 0;text-align:right}
+.canopy-lab-card dl>div{display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid #e4e5d5;font-size:11px}
+.canopy-lab-card dt{color:#7d856f}.canopy-lab-card dd{margin:0;font-weight:700;color:#294d3e}
+.canopy-lab-card button{background:#23483b;color:white;padding:12px 15px;border-radius:8px;font-size:11px}
+.canopy-lab-card.neutral{align-items:center;color:#668668}
+.canopy-lab-card.neutral h3{font:700 20px "Tajawal",serif;color:#305443;margin:0}
+.canopy-lab-card.neutral p{font-size:11px;color:#7d887a;line-height:2;margin:0}
+.canopy-lab-note{background:#edf1e5;padding:15px;border-radius:9px;line-height:2;font-size:11px}
+.canopy-lab-note strong{font:700 14px "Tajawal",serif}
+.canopy-lab-note p{margin:5px 0 0;color:#778471}
+.canopy-lab-inspector>a{margin:15px 0 7px;display:flex;gap:7px;align-items:center;font-size:11px;color:#2a6a4e;text-decoration:none}
+.canopy-lab-inspector>small{color:#99977e;font-size:10px}
+.canopy-lab-gate{min-height:55vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;padding:40px 20px;text-align:center;background:#f7f3e7;color:#234b3c}
+.canopy-lab-gate span{font-size:12px;color:#b29361}
+.canopy-lab-gate h1{font:700 48px "Tajawal",serif;margin:0}
+.canopy-lab-gate p{font-size:13px;line-height:2;max-width:460px}
+@media(max-width:1000px){.canopy-lab-workspace{grid-template-columns:1fr}.canopy-lab-inspector{position:static}.canopy-lab-controls{padding-inline:4%}}
+@media(max-width:650px){.canopy-lab-hero{padding:37px 20px}.canopy-lab-controls{padding:17px 12px}.canopy-lab-workspace{padding:0 9px}.canopy-lab-filter button{padding:8px;font-size:10px}.canopy-lab-search{width:100%}.canopy-lab-legend{font-size:9px;gap:9px}.canopy-lab-toolbar>div:first-child span{display:none}}
+@media print{.canopy-lab-hero,.canopy-lab-controls,.canopy-lab-toolbar,.canopy-lab-inspector,.canopy-lab-legend{display:none!important}.canopy-lab-workspace{display:block;padding:0}.canopy-lab-poster-wrap{border:0;box-shadow:none}.canopy-lab-svg{width:100%;height:auto}}

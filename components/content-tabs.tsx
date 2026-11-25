@@ -1,0 +1,9 @@
+'use client';
+import {useEffect,useState} from 'react';
+export function ContentTabs({items}:{items:{id:string;label:string;content:React.ReactNode}[]}){
+ const [active,setActive]=useState(items[0]?.id);const ids=items.map(t=>t.id).join(',');
+ useEffect(()=>{const restore=()=>{const value=new URLSearchParams(window.location.search).get('tab');if(value&&ids.split(',').includes(value))setActive(value);else setActive(ids.split(',')[0]);};restore();window.addEventListener('popstate',restore);return()=>window.removeEventListener('popstate',restore)},[ids]);
+ useEffect(()=>{const scrollToHash=()=>{try{const id=decodeURIComponent(window.location.hash.slice(1));const target=id?document.getElementById(id):null;if(target&&target.closest('[role=tabpanel]')?.id==='panel-'+active)target.scrollIntoView({block:'start'});}catch{/* Ignore malformed external fragments. */}};scrollToHash();window.addEventListener('hashchange',scrollToHash);return()=>window.removeEventListener('hashchange',scrollToHash)},[active]);
+ const choose=(id:string)=>{setActive(id);const url=new URL(window.location.href);url.searchParams.set('tab',id);window.history.pushState(null,'',url.pathname+url.search+url.hash);};
+ return <><div className="compact-tabs" role="tablist" aria-label="أقسام الصفحة">{items.map((t,i)=><button id={'tab-'+t.id} role="tab" tabIndex={active===t.id?0:-1} aria-selected={active===t.id} aria-controls={'panel-'+t.id} key={t.id} onClick={()=>choose(t.id)} onKeyDown={e=>{let n=i;if(e.key==='ArrowLeft')n=(i+1)%items.length;else if(e.key==='ArrowRight')n=(i-1+items.length)%items.length;else if(e.key==='Home')n=0;else if(e.key==='End')n=items.length-1;else return;e.preventDefault();choose(items[n].id);document.getElementById('tab-'+items[n].id)?.focus();}}>{t.label}</button>)}</div>{items.map(t=><section role="tabpanel" aria-labelledby={'tab-'+t.id} id={'panel-'+t.id} hidden={active!==t.id} key={t.id}>{t.content}</section>)}</>
+}

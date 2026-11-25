@@ -1,0 +1,1 @@
+ALTER TABLE `announcements` ADD `category` text DEFAULT 'news' NOT NULL;

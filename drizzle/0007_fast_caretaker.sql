@@ -1,0 +1,1 @@
+ALTER TABLE `tree_delegate_grants` ADD `delegate_user_id` text;

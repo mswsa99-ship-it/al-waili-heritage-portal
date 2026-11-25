@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
+:root{--bg-primary:#FBF9F5;--bg-surface:#fff;--color-primary:#233D2C;--color-royal:#412F1F;--color-accent:#C5A059;--text-primary:#1C1917;--text-secondary:#57534E;--border-surface:rgba(197,160,89,.25);--shadow-surface:0 4px 20px -2px rgba(65,47,31,.05);--font-ui:'IBM Plex Sans Arabic','Tajawal',Tahoma,sans-serif;--font-heritage:'Amiri',serif;--ink:var(--text-primary);--forest:var(--color-primary);--cream:var(--bg-primary);--paper:var(--bg-primary);--gold:var(--color-accent);--sand:#f0e9db;--sage:#57534E;--line:var(--border-surface)}
+body.najdi-platform{background:var(--bg-primary);color:var(--text-primary);font-family:var(--font-ui);font-size:15px;line-height:1.7}
+body.najdi-platform :is(.site-home,.portal-shell,.portal-content,.family-design,.member-design){background:var(--bg-primary);color:var(--text-primary);font-family:var(--font-ui)}
+body.najdi-platform :is(h1,h2,h3,h4,p,a,button,input,select,textarea,label,summary,table,small,li,span,svg text){font-family:var(--font-ui)}
+body.najdi-platform :is(p,li,input,select,textarea){font-size:max(15px,1em);line-height:1.8}
+body.najdi-platform :is(p,small,.portal-small,.member-role,.arrival-label,.arrival-directory span,.portal-kicker,.public-date,.easy-note,.contact-field-help){color:var(--text-secondary)}
+body.najdi-platform :is(small,label,.portal-small,.portal-kicker,.public-date,.arrival-label,.site-brand small,.portal-tag,.portal-badge){font-size:13.5px;font-weight:500;line-height:1.7}
+body.najdi-platform :is(h1,h2,h3,h4){color:var(--color-primary);line-height:1.6;letter-spacing:0}
+body.najdi-platform :is(.family-welcome h1,.public-page-hero h1,.portal-heading h1){font-family:var(--font-heritage);font-weight:700;font-size:clamp(32px,4vw,46px);line-height:1.5}
+body.najdi-platform :is(.portal-card,.lineage-card,.public-story-card,.four-home>a,.easy-services,.easy-story,[data-slot=card],[role=dialog]){background:var(--bg-surface);border:1px solid var(--border-surface);box-shadow:var(--shadow-surface);border-radius:18px}
+body.najdi-platform :is(.portal-card,.lineage-card,.public-story-card){padding:24px;min-width:0}
+body.najdi-platform :is(.portal-button,.site-primary-action,.arrival-button,.easy-family-entry,.site-header-button){min-height:48px;padding:12px 20px;border-radius:12px;font-size:15px;line-height:1.7;font-weight:600;gap:10px;justify-content:center}
+body.najdi-platform :is(.site-primary-action,.portal-button,.arrival-button.primary,.easy-family-entry){background:var(--color-primary);color:white;border-color:var(--color-primary)}
+body.najdi-platform :is(.portal-button.outline,.portal-button.secondary,.arrival-button:not(.primary)){background:var(--bg-surface);color:var(--color-primary);border:1px solid var(--color-accent)}
+body.najdi-platform :is(button,a,summary){touch-action:manipulation;-webkit-tap-highlight-color:#c5a05930}
+body.najdi-platform :is(input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=hidden]),select,textarea){min-height:48px;background:var(--bg-primary);border:1px solid #a89a86;border-radius:12px;padding:11px 14px;color:var(--text-primary);font-size:16px;line-height:1.7;max-width:100%}
+body.najdi-platform :is(input,select,textarea):focus{background:#fff;border-color:var(--color-royal);outline:2px solid var(--color-accent);outline-offset:2px}
+body.najdi-platform :is(input[type=checkbox],input[type=radio]){accent-color:var(--color-primary);width:20px;height:20px;flex-shrink:0}
+body.najdi-platform :is(button,a,summary):focus-visible{outline:3px solid #876221;outline-offset:4px}
+body.najdi-platform :is(button,input,select,textarea):disabled{cursor:not-allowed;opacity:.65}
+body.najdi-platform :is(.portal-note,.portal-message,.lineage-help,.lineage-warning,.lineage-error,.lineage-success,.public-notice){background:#f5efe2;border:1px solid var(--border-surface);border-inline-start:4px solid var(--color-accent);border-radius:12px;padding:18px 20px;color:var(--text-secondary);font-size:15px;line-height:1.8;overflow-wrap:anywhere}
+body.najdi-platform :is(.portal-message.error,.lineage-error){background:#fff1ec;border-inline-start-color:#9b3528;color:#792b21}
+body.najdi-platform .lineage-success{background:#eef5ea;border-inline-start-color:#31583a;color:#233D2C}
+body.najdi-platform .portal-empty{position:relative;background:linear-gradient(140deg,#fff,#f5efe4);border:1px dashed #bba578;border-radius:16px;padding:32px 24px;text-align:center;color:var(--text-secondary);font-size:15px;line-height:1.8}
+body.najdi-platform .portal-empty:before{content:'◇';display:block;color:#8b682e;font-size:30px;line-height:1.5;margin-bottom:10px}
+body.najdi-platform :is(.portal-card>h2,.portal-card>h3,.lineage-card>h2){padding-bottom:16px;border-bottom:1px solid var(--border-surface);margin-bottom:20px}
+body.najdi-platform :is(.portal-tag,.portal-badge){background:#f2eadb;color:#584021;border:1px solid var(--border-surface);border-radius:8px;padding:5px 10px}
+body.najdi-platform table{border-collapse:separate;border-spacing:0;width:100%;font-size:15px;color:var(--text-primary)}
+body.najdi-platform :is(th,td){padding:15px 16px;line-height:1.8;border-color:var(--border-surface)}
+body.najdi-platform th{background:#efe6d5;color:var(--color-royal);font-weight:600}body.najdi-platform tbody tr:nth-child(even){background:#fcfaf6}
+/* Public arrival: recognizable seal, generous actions, compact destination grid. */
+body.najdi-platform .family-arrival{width:min(100% - 48px,1040px)}
+body.najdi-platform .family-welcome{padding:48px 0 36px}
+body.najdi-platform .arrival-seal{width:132px;height:132px;padding:9px;background:#f5ead6;border:1px solid var(--color-accent);outline:1px solid #c5a05966;outline-offset:6px;box-shadow:0 14px 32px #412f1f20;margin-bottom:28px}
+body.najdi-platform .family-welcome:before{background:radial-gradient(ellipse at center,#eee0c640,transparent 65%)}
+body.najdi-platform .arrival-tagline{color:var(--color-royal);font-size:19px}
+body.najdi-platform .arrival-location{color:#785a25}
+body.najdi-platform .arrival-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;border:0;margin:20px 0 32px}
+body.najdi-platform .arrival-directory>a{display:grid;grid-template-columns:30px minmax(0,1fr) 18px;align-items:start;gap:14px;padding:24px 20px;min-height:140px;background:#fff;border:1px solid var(--border-surface);box-shadow:var(--shadow-surface);border-radius:16px;transition:transform .18s,border-color .18s}
+body.najdi-platform .arrival-directory>a:first-child{grid-column:span 2;background:#f5efe3}
+body.najdi-platform .arrival-directory>a:hover{transform:translateY(-3px);border-color:var(--color-accent)}
+body.najdi-platform .arrival-directory .destination-icon{color:#926b2a}.najdi-platform .arrival-directory strong{font-size:18px;color:var(--color-primary)}
+body.najdi-platform .arrival-directory span{font-size:15px;line-height:1.8}
+body.najdi-platform .arrival-introduction{position:relative;isolation:isolate;overflow:hidden;padding:32px;background:#f2eadb;border:1px solid var(--border-surface);border-inline-start:4px solid var(--color-accent);border-radius:18px;margin:32px 0}
+body.najdi-platform .arrival-introduction:after{content:'';position:absolute;inset-inline-end:-30px;top:-35px;width:150px;height:150px;border:1px solid #c5a05945;transform:rotate(45deg);box-shadow:0 0 0 16px #c5a05910,0 0 0 32px #c5a0590a;z-index:-1}
+body.najdi-platform .family-arrival .public-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}@media(max-width:1024px){body.najdi-platform .family-arrival .public-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+body.najdi-platform .family-arrival .public-story-card{padding:24px;background:#fff;border:1px solid var(--border-surface);border-radius:18px;box-shadow:var(--shadow-surface)}
+body.najdi-platform .public-story-card>small{display:inline-block;background:#f3ebdc;color:#584021;padding:7px 12px;border-radius:8px;font-size:13.5px}
+body.najdi-platform .public-story-card .easy-story>summary{min-height:48px;background:#f6f0e5;padding:12px 16px;border-radius:10px;color:var(--color-primary);font-size:15px;font-weight:600}
+body.najdi-platform .public-page-hero{background:var(--color-primary)}body.najdi-platform .public-page-hero :is(h1,p,nav,span,a){color:#fff}
+body.najdi-platform .visitor-header{min-height:88px}.najdi-platform .visitor-footer{background:#f0e8d9;border-top:1px solid var(--border-surface)}
+/* Internal executive header and persistent responsive section navigation. */
+body.najdi-platform .easy-account-nav{display:flex!important;justify-content:center;gap:12px;background:#fff;border-bottom:1px solid var(--border-surface);padding:14px 24px}
+body.najdi-platform .easy-account-nav a{display:flex;align-items:center;gap:9px;font-size:15px;min-height:48px;color:var(--text-secondary);border-radius:12px;border:1px solid transparent;padding:10px 16px;position:relative}
+body.najdi-platform .easy-account-nav a[aria-current=page]{background:#f2eadb;border-color:var(--border-surface);color:var(--color-primary);box-shadow:none}
+body.najdi-platform .easy-account-nav svg{color:#8b682e;flex-shrink:0}
+body.najdi-platform .portal-toolbar{max-width:1104px;margin:24px auto 0;padding:24px 28px;background:var(--color-royal);border:1px solid #c5a05966;border-radius:18px;box-shadow:var(--shadow-surface);gap:24px;display:flex;align-items:center;justify-content:space-between}
+body.najdi-platform .portal-toolbar :is(p,strong,.portal-breadcrumb,.member-role){color:#fff}.najdi-platform .portal-toolbar .portal-kicker{margin:0 0 8px;font-size:13.5px}
+body.najdi-platform .portal-avatar{background:#f2e5cb;color:var(--color-royal);border:1px solid var(--color-accent);width:48px;height:48px}
+body.najdi-platform .member-public-link{color:#fff;border:1px solid #c5a059aa;min-height:48px;border-radius:10px;margin-inline-start:8px;padding:10px 14px;white-space:nowrap}
+body.najdi-platform .portal-main{padding-top:28px}.najdi-platform .four-home>a{border:1px solid var(--border-surface);background:#fff;box-shadow:var(--shadow-surface)}
+body.najdi-platform .four-home>a>svg{color:#8b682e;background:#f5edde}.najdi-platform .member-card-action{color:var(--color-primary);font-size:15px}
+body.najdi-platform :is(.four-section-tools,.lineage-tabs){gap:10px;overflow-x:auto;overscroll-behavior-x:contain;padding:4px 2px 16px;scrollbar-width:thin}
+body.najdi-platform :is(.four-section-tools button,.lineage-tabs button,.easy-topics button){min-height:48px;border-radius:12px;padding:10px 16px;background:#fff;border:1px solid var(--border-surface);font-size:15px;color:var(--color-primary)}
+body.najdi-platform :is(.four-section-tools button,.easy-topics button)[aria-pressed=true]{background:var(--color-primary);color:#fff;border-color:var(--color-primary)}
+body.najdi-platform :is(.lineage-chain,.lineage-results,.lineage-list){overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#b89a65 #f5eee2;-webkit-overflow-scrolling:touch}
+body.najdi-platform :is([role=dialog],[data-slot=dialog-content]){max-height:calc(100dvh - 40px);overflow-y:auto;border:1px solid var(--border-surface);background:#fff;border-radius:20px;padding:24px;color:var(--text-primary)}
+@media(max-width:760px){
+ body.najdi-platform .family-arrival{width:calc(100% - 32px)}body.najdi-platform .arrival-directory{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ body.najdi-platform .arrival-directory>a{grid-template-columns:1fr;padding:20px 16px;gap:10px;min-height:160px}.najdi-platform .arrival-directory>a>svg:last-child{display:none}
+ body.najdi-platform .arrival-directory>a:first-child{grid-column:1/-1;min-height:120px;grid-template-columns:30px 1fr}
+ body.najdi-platform .arrival-directory strong{font-size:17px}.najdi-platform .arrival-directory span{font-size:15px} body.najdi-platform .arrival-directory>a:not(:first-child){align-content:start;grid-template-rows:30px 3.6em 5.4em}body.najdi-platform .arrival-directory>a:not(:first-child) strong{font-size:17px;line-height:1.8;min-height:3.6em;display:flex;align-items:flex-start}body.najdi-platform .arrival-directory>a:not(:first-child) span{font-size:14px;line-height:1.8;min-height:5.4em;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}body.najdi-platform .arrival-directory>a>svg:first-child{justify-self:start}
+ body.najdi-platform .arrival-actions{flex-wrap:wrap}.najdi-platform .arrival-button{flex:1 1 160px;min-height:52px}
+ body.najdi-platform .arrival-introduction{padding:26px 20px}body.najdi-platform .family-arrival .public-card-grid{grid-template-columns:1fr}body.najdi-platform .family-arrival .news-read-button{white-space:normal;text-align:center;line-height:1.5}
+ body.najdi-platform .member-design{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+ body.najdi-platform .easy-account-nav{position:fixed;inset:auto 0 0;z-index:50;min-height:68px;height:auto;padding:4px 4px calc(4px + env(safe-area-inset-bottom,0px));gap:2px;flex-wrap:nowrap;background:#fbf9f5f2;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border-surface);box-shadow:0 -5px 24px #412f1f0c}
+ body.najdi-platform .easy-account-nav a{flex:1 1 0;min-width:0;padding:5px 2px;min-height:60px;display:flex;flex-direction:column;justify-content:center;gap:3px;text-align:center;font-size:13.5px;line-height:1.25;border-radius:10px}
+ body.najdi-platform .easy-account-nav a span{font-size:13.5px;font-weight:500;max-width:100%}.najdi-platform .easy-account-nav a svg{width:22px;height:22px}
+ body.najdi-platform .easy-account-nav a[aria-current=page]:before{content:'';position:absolute;top:1px;left:50%;width:5px;height:5px;border-radius:50%;background:#a57a2b;transform:translateX(-50%)}
+ body.najdi-platform .portal-toolbar{margin:16px 16px 0;padding:20px;display:flex;flex-direction:column;align-items:stretch;gap:16px}.najdi-platform .portal-profile{width:100%;flex-wrap:wrap}.najdi-platform .member-public-link{margin-inline-start:auto}
+ body.najdi-platform .four-section-tools{flex-wrap:nowrap}.najdi-platform .four-section-tools button{flex:0 0 auto;white-space:nowrap}
+ body.najdi-platform :is(.portal-columns,.lineage-columns){grid-template-columns:minmax(0,1fr)}body.najdi-platform :is(.portal-card,.lineage-card){padding:20px 16px}
+ body.najdi-platform .portal-heading{margin-top:20px}.najdi-platform .portal-heading h1{font-size:34px}
+ body.najdi-platform .lineage-chain{overflow-x:auto;flex-wrap:nowrap}.najdi-platform .lineage-chain>button{min-width:160px;flex-shrink:0}
+ body.najdi-platform :is([role=dialog],[data-slot=dialog-content]){max-width:calc(100vw - 24px);max-height:calc(100dvh - 100px);padding:20px}
+}
+@media(prefers-reduced-motion:reduce){body.najdi-platform *,body.najdi-platform *:before{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+body.najdi-platform :is(.lineage-page,.record-layout){background:var(--bg-primary);color:var(--text-primary);font-family:var(--font-ui)}
+body.najdi-platform .lineage-tabs button.active{background:var(--color-primary);color:white}
+body.najdi-platform .lineage-page button{min-height:48px;font-size:15px;border-radius:12px}
+body.najdi-platform .lineage-list small{font-size:13.5px;color:var(--text-secondary)}
+
+/* lineage search/filter/pager: the global input rule re-adds a border inside the pill, so reset it here */
+body.najdi-platform .portal-search{padding:0 14px;min-height:52px;margin:14px 0}
+body.najdi-platform .portal-search input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=hidden]):not([type=x]){border:0;border-radius:0;background:transparent;min-height:48px;padding:0;outline:none;flex:1;min-width:0}
+body.najdi-platform .portal-search:focus-within{border-color:var(--color-royal);outline:none;box-shadow:0 0 0 1px var(--color-royal)}
+body.najdi-platform .portal-field{display:grid;gap:8px;margin:12px 0;font-weight:600}
+body.najdi-platform .portal-field select{width:100%}
+body.najdi-platform .portal-card [role=status]{margin:12px 0}
+body.najdi-platform .portal-pager{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+body.najdi-platform .portal-pager>button{flex:1 1 140px}
+body.najdi-platform .portal-card>button.portal-button.secondary{width:100%;margin-bottom:12px}
+body.najdi-platform .portal-search input,body.najdi-platform .portal-search input:focus{border:0!important;outline:none!important;background:transparent!important;box-shadow:none!important}
+
+/* mobile: keep the last card and pager clear of the fixed bottom bar (measured bar height + safe area + gap) */
+@media(max-width:820px){body.najdi-platform .easy-portal{padding-bottom:calc(var(--bottom-bar-h,96px) + 24px + env(safe-area-inset-bottom,0px))}}

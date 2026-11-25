@@ -1,0 +1,2 @@
+import {historyArticles} from '@/lib/editorial-content';
+export function HistoryIntroduction({compact=false}:{compact?:boolean}){return <div className="public-card-grid">{historyArticles.slice(0,compact?3:undefined).map(a=><article className="public-story-card" key={a.id}><small>الجذور والذاكرة</small><h3>{a.title}</h3><p>{a.summary}</p><a href={'/heritage?article='+a.id} target="_top" className="public-underlined-link">اقرأ المقال كاملًا ←</a></article>)}</div>}

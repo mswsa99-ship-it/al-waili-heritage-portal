@@ -1,0 +1,10 @@
+'use client';
+import {useState} from 'react';
+import {eventCalendarFile,type CalendarEvent} from '@/lib/event-calendar-export';
+export default function EventCalendar({events}:{events:CalendarEvent[]}){
+ const [month,setMonth]=useState(()=>new Date().toLocaleDateString('sv-SE',{timeZone:'Asia/Riyadh'}).slice(0,7));
+ const [notice,setNotice]=useState(''),[error,setError]=useState('');
+ const selected=events.filter(e=>e.eventDate.startsWith(month)).sort((a,b)=>a.eventDate.localeCompare(b.eventDate));
+ function download(event:CalendarEvent){setError('');setNotice('');let url:string|undefined;try{const file=eventCalendarFile(event);url=URL.createObjectURL(new Blob([file],{type:'text/calendar;charset=utf-8'}));const link=document.createElement('a');link.href=url;link.download='family-event-'+encodeURIComponent(event.id)+'.ics';document.body.appendChild(link);link.click();link.remove();setNotice('تم تجهيز ملف المناسبة للتنزيل. افتحه واختر التقويم الذي تريد إضافتها إليه. إعادة استيراد الملف قد تكرر المناسبة في بعض التطبيقات.');}catch(e){setError(e instanceof Error?e.message:'تعذر تجهيز ملف المناسبة.');}finally{if(url){const downloadedUrl=url;window.setTimeout(()=>URL.revokeObjectURL(downloadedUrl),1000);}}}
+ return <section className="portal-card"><h3>المناسبات حسب الشهر</h3><label className="portal-form">الشهر<input type="month" value={month} onChange={e=>setMonth(e.target.value)}/></label><p>تنزيل المناسبة يجهّز ملفًا لتقويم جهازك، ولا يرسل دعوات. تُضاف كيوم كامل لأن السجل لا يحدد ساعة البداية.</p>{error&&<p role="alert">{error}</p>}{notice&&<p role="status">{notice}</p>}{selected.length?<ol>{selected.map(e=><li key={e.id} style={{marginBlock:16}}><a href={'#event-'+encodeURIComponent(e.id)}><time dateTime={e.eventDate}>{new Date(e.eventDate+'T12:00:00').toLocaleDateString('ar-SA',{weekday:'long',day:'numeric',month:'long'})}</time> — {e.title}</a>{e.place&&<small> · {e.place}</small>}<div style={{marginTop:8}}><button type="button" className="portal-button secondary" onClick={()=>download(e)}>تنزيل إلى تقويمي</button></div></li>)}</ol>:<p>لا توجد مناسبات في هذا الشهر.</p>}</section>
+}

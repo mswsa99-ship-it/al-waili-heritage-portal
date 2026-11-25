@@ -1,0 +1,97 @@
+.visitor-header{min-height:98px;border-bottom:1px solid #e4dccd}
+.visitor-header .site-nav a,.visitor-footer a{min-height:44px;display:inline-flex;align-items:center}
+.visitor-skip{position:absolute;top:-100px;right:16px;z-index:50;padding:12px 20px;background:#153c35;color:white;border-radius:6px}
+.visitor-skip:focus{top:12px}
+.visitor-home{max-width:1440px;margin:auto}
+.visitor-hero{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:48px;padding:64px 6% 60px;min-height:450px}
+.visitor-hero h1{font:700 clamp(48px,6vw,78px)/1.25 "Tajawal",serif;margin:18px 0;color:#153c35}
+.visitor-hero h1 em{color:#98713b;font-style:normal}
+.visitor-hero p{max-width:560px;line-height:2;font-size:17px;color:#4d5e56;margin:0 0 26px}
+.visitor-emblem{min-height:330px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;border:1px solid #d7c6a8;border-radius:160px 160px 6px 6px;background:#ede5d6;color:#685532;letter-spacing:1px}
+.visitor-emblem img{width:200px;height:200px;object-fit:contain;mix-blend-mode:multiply}
+.visitor-emblem>span{font-family:"Tajawal",serif;font-size:24px}
+.visitor-emblem small{font-size:12px}
+.visitor-section{padding:42px 6%;border-top:1px solid #e4dccd}
+.visitor-section-heading{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:20px}
+.visitor-section-heading h2{font:700 34px/1.5 "Tajawal",serif;color:#153c35;margin:4px 0 0}
+.visitor-section-heading a{min-height:44px}
+.visitor-empty{color:#58665f;font-size:15px;line-height:1.9;margin:0}
+.visitor-news{background:#f2ecdf}
+.visitor-contact{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:42px 6%;border-top:1px solid #e4dccd}
+.visitor-contact h2{font:700 30px/1.5 "Tajawal",serif;color:#153c35;margin:0 0 8px}
+.visitor-contact p{margin:0;color:#58665f;line-height:1.9}
+.visitor-contact>a{flex-shrink:0}
+.visitor-site .public-story-card p,.visitor-site .public-story-card h3{overflow-wrap:anywhere}
+.visitor-footer{margin-top:0}
+@media(max-width:760px){
+ .visitor-header{min-height:unset;gap:12px;justify-content:center;padding:16px 20px}
+ .visitor-header .site-nav{justify-content:center;gap:8px 20px;flex-wrap:wrap;overflow:visible;white-space:normal;padding:8px 0 0}
+ .visitor-header .site-nav a{font-size:12px;white-space:normal}
+ .visitor-hero{grid-template-columns:1fr;gap:24px;padding:34px 22px 36px;min-height:unset}
+ .visitor-hero h1{font-size:50px}
+ .visitor-hero p{font-size:15px}
+ .visitor-emblem{display:none}
+ .visitor-section-heading{align-items:flex-start;flex-wrap:wrap;gap:6px}
+ .visitor-section-heading h2{font-size:29px}
+ .visitor-contact{display:block;padding:32px 22px}
+ .visitor-contact h2{font-size:28px}
+ .visitor-contact>a{margin-top:18px}
+ .visitor-footer{padding:30px 22px;gap:22px}
+}
+
+.editorial-reading{max-width:1000px;margin:auto}.editorial-reading section{margin-block:38px}.editorial-reading p,.editorial-reading li{font-size:18px;line-height:2.15}.editorial-reading figure{margin:0}.editorial-reading h2{color:#153c35}
+
+/* One direct destination per task; generous touch targets and clear reading. */
+.easy-family-entry{display:inline-flex;padding:14px 20px;background:#153c35;color:white;border-radius:12px;font-size:1rem;font-weight:700;white-space:nowrap;min-height:48px;align-items:center}
+.easy-history{max-width:940px;margin:auto}.easy-search{display:block;font-size:1.2rem;font-weight:700}.easy-search input{display:block;width:100%;padding:16px;border:2px solid #87998c;border-radius:12px;margin:10px 0 20px;font-size:1.2rem;background:white;color:#153c35}.easy-topics{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}.easy-topics button,.easy-audio,.easy-close,.easy-reset{padding:12px 18px;min-height:48px;border:1px solid #87998c;border-radius:12px;font-size:1rem;cursor:pointer}.easy-topics button[aria-pressed=true],.easy-audio{background:#153c35;color:white}.easy-note{line-height:1.9;color:#4b6259}.easy-story{border:1px solid #c6cdbf;border-radius:16px;margin:16px 0;background:#fff;scroll-margin-top:24px}.easy-story summary{cursor:pointer;padding:22px 58px 22px 22px;position:relative;list-style:none;min-height:74px}.easy-story summary::-webkit-details-marker{display:none}.easy-story summary strong{font-size:1.35rem;display:block;line-height:1.7;color:#153c35}.easy-story summary span{display:block;font-size:1rem;line-height:1.8;color:#52665d;margin-top:6px}.easy-story summary b{position:absolute;right:20px;top:25px;font-size:1.6rem}.easy-story[open]{border:2px solid #153c35}.easy-story-body{padding:0 24px 24px}.easy-audio{display:inline-flex;gap:10px;align-items:center;margin:8px 0 18px}.easy-close{display:block;margin-top:24px}.easy-history :focus-visible,.easy-family-entry:focus-visible{outline:3px solid #b9965c;outline-offset:4px}.easy-history .record-prose{font-size:1.15rem;line-height:2.1}.easy-history .record-table{max-width:100%;overflow:auto}
+@media(max-width:760px){.visitor-header{flex-wrap:wrap;gap:12px}.easy-family-entry{width:100%;justify-content:center}.easy-story summary{padding-inline-end:16px}.easy-story-body{padding:0 16px 20px}.easy-topics button{flex:1 1 120px}.easy-history .record-prose{font-size:1.1rem}}
+.family-login{max-width:560px;margin:auto;padding:32px;border:1px solid #c6cdbf;border-radius:18px;background:white}.family-login p{line-height:1.9;margin:20px 0}.family-login .site-primary-action{width:100%;justify-content:center;min-height:52px}@media(max-width:680px){.visitor-hero{grid-template-columns:1fr;padding:32px 20px;gap:24px;min-height:0}.visitor-emblem{display:none}.visitor-hero h1{font-size:48px}.visitor-section{padding:30px 20px}.visitor-site .public-card-grid{grid-template-columns:1fr}.visitor-header .site-nav{display:flex;flex-wrap:wrap;justify-content:center;width:100%;gap:16px}.visitor-header .site-nav a{font-size:16px}.visitor-header{padding:16px 20px}.visitor-section-heading{align-items:flex-start}.visitor-section-heading h2{font-size:30px}.visitor-section-heading>a{font-size:14px}.public-story-card h3{font-size:23px}.public-story-card p{font-size:16px;line-height:1.9}}
+
+/* Public arrival page: one reading axis and predictable card rhythm. */
+.visitor-site .visitor-header{display:grid;grid-template-columns:auto 1fr auto;gap:24px;min-height:96px;padding:16px 5%;align-items:center}
+.visitor-site .visitor-header .site-nav{display:flex;justify-content:center;gap:24px;font-size:15px;order:initial;flex:none;width:auto;overflow:visible;border:0;padding:0}
+.visitor-site .visitor-header .site-nav a{font-size:15px;min-height:48px;white-space:nowrap}
+.visitor-site .easy-family-entry{width:auto;min-height:48px;padding:12px 18px;font-size:15px;border-radius:8px}
+.visitor-home .visitor-hero{display:block;min-height:0;padding:56px 24px 52px;text-align:center;border-bottom:0}
+.visitor-hero-copy{max-width:760px;margin:0 auto}
+.visitor-hero-copy .site-eyebrow{justify-content:center;font-size:14px;line-height:1.8}
+.visitor-home .visitor-hero h1{font-size:clamp(40px,5vw,60px);line-height:1.5;margin:12px 0 0}
+.visitor-home .visitor-hero .visitor-motto{font:700 clamp(24px,3vw,32px)/1.7 "Tajawal",serif;color:#866538;margin:0 auto 18px}
+.visitor-home .visitor-hero p{max-width:680px;margin:0 auto 24px;font-size:18px;line-height:1.95}
+.visitor-site .site-primary-action{min-height:48px;font-size:15px;padding:12px 22px;border-radius:8px;justify-content:center}
+.visitor-home .visitor-section{padding:40px 5%}
+.visitor-home .visitor-section-heading{align-items:center;flex-wrap:nowrap;margin-bottom:24px;gap:16px}
+.visitor-home .visitor-section-heading h2{font-size:32px;margin:0;line-height:1.7}
+.visitor-home .visitor-section-heading .site-section-index{display:none}
+.visitor-home .public-card-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+.visitor-home .visitor-news .public-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.visitor-home .public-story-card{padding:24px;border-radius:12px;box-shadow:none;display:flex;flex-direction:column;gap:12px}
+.visitor-home .visitor-section:not(.visitor-news) .public-story-card>small{display:none}
+.visitor-home .public-story-card h3{font-size:26px;line-height:1.6;margin:0}
+.visitor-home .public-story-card p{font-size:16px;line-height:1.9;margin:0 0 8px}
+.visitor-home .public-story-card>.public-underlined-link{margin-top:auto;align-self:flex-start;min-height:44px;display:inline-flex;align-items:center;font-size:15px}
+.visitor-home .public-story-card>details{margin-top:auto}
+.visitor-site .visitor-footer{padding:32px 5%;gap:24px}
+@media(max-width:1024px){
+ .visitor-site .visitor-header{grid-template-columns:minmax(0,1fr) auto;gap:12px;padding:16px 24px}
+ .visitor-site .visitor-header .site-nav{grid-column:1 / -1;grid-row:2;justify-content:center;gap:28px;border-top:1px solid #e4dccd;padding-top:8px}
+ .visitor-site .easy-family-entry{grid-column:2;grid-row:1}
+ .visitor-home .public-card-grid,.visitor-home .visitor-news .public-card-grid{grid-template-columns:1fr}
+ .visitor-home .visitor-hero{padding:36px 24px}
+ .visitor-home .visitor-section{padding:32px 24px}
+ .visitor-home .public-story-card{gap:8px}
+}
+@media(max-width:480px){
+ .visitor-site .visitor-header{padding:12px 16px;gap:10px}
+ .visitor-site .visitor-header .site-nav{gap:24px}
+ .visitor-site .easy-family-entry{font-size:13px;padding:10px 12px}
+ .visitor-site .visitor-header .site-brand{gap:8px;min-width:0}
+ .visitor-site .visitor-header .site-seal{width:44px;height:44px}
+ .visitor-home .visitor-hero{padding:28px 20px 32px}
+ .visitor-home .visitor-hero p{font-size:17px}
+ .visitor-home .visitor-section{padding:28px 20px!important}
+ .visitor-home .visitor-section-heading h2{font-size:28px}
+ .visitor-home .visitor-section-heading>a{font-size:13px;white-space:nowrap}
+ .visitor-home .public-story-card{padding:20px}
+ .visitor-home .public-story-card h3{font-size:25px}
+}

@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX `members_person_ref_unique` ON `members` (`person_ref`);

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#143d35">
+  <meta name="description" content="محرر مرئي قابل للمراجعة لمشجرة أسرة الوايلي، مع حفظ التعديلات والصور المرجعية.">
+  <title>مشجرة الوايلي | لوحة المراجعة والتحرير</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./najdi.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="brand"><div class="brand-mark">و</div><div><div class="eyebrow">أرشيف الأسرة · مسودة تحقيق</div><h1>مشجرة أسرة الوايلي</h1></div></div>
+    <div class="header-actions"><span class="privacy"><span class="live-dot"></span>نسخة مراجعة خاصة</span><button class="btn btn-ghost" id="helpBtn" title="طريقة الاستخدام">دليل الاستخدام <span class="desktop-only">؟</span></button><button class="btn btn-outline" id="exportBtn">↧ حفظ نسخة</button></div>
+  </header>
+  <section class="intro">
+    <div class="intro-copy"><span class="eyebrow">شبكة الأجيال · مسودة تدقيق</span><h2>كل جيل في صف مستقل أسفل سلفه.</h2><p>تُرتّب الخلايا في مصفوفات حسب عمق النسب، ويظهر كل ابن في جيل بعد أبيه. يُحفظ ترتيب الإخوة المدوّن حتى تحدد ترتيب الميلاد الموثق لكل فرع.</p></div>
+    <div class="metrics"><div><strong id="totalCount">—</strong><span>خلية في الرسم</span></div><div><strong id="reviewedCount">٠</strong><span>خلايا تمت مراجعتها</span></div><div><strong id="pendingCount">—</strong><span>بانتظار المطابقة</span></div></div>
+  </section>
+  <main class="workspace" id="workspace">
+    <aside class="reference panel" id="referencePanel">
+      <div class="panel-heading"><div><span class="eyebrow">المرجع الأصلي</span><h3>الصورة المرفقة</h3></div><button class="icon-btn" id="closeRef" title="إخفاء الصورة">×</button></div>
+      <div class="photo-switch" role="group" aria-label="اختيار الصورة المرجعية"><button data-photo="2" class="active">الأمامية</button><button data-photo="1">الأولى</button><button data-photo="3">الجانبية</button></div>
+      <div class="photo-zoom"><span>تكبير المرجع</span><div><button id="photoZoomOut" title="تصغير الصورة">−</button><output id="photoZoomLabel">١٠٠٪</output><button id="photoZoomIn" title="تكبير الصورة">+</button></div></div>
+      <div class="photo-frame"><img src="/api/review-media/2" id="referenceImage" alt="صورة المشجرة المؤطّرة الأصلية"></div>
+      <div class="photo-foot"><span>كبّر الصورة لقراءة الأسماء</span><a id="fullPhoto" target="_blank" rel="noopener" href="/api/review-media/2">فتح بالحجم الكامل ↗</a></div>
+      <div class="notice"><b>تنبيه دقّة</b><p>بعض الأسماء والخطوط متشابكة أو غير واضحة في الصور. الرسم الحالي مبني على التفكيك المرفق، وتُرتّب الخلايا تلقائيًا حسب مستوى النسب، ولا يُعد توثيقًا نهائيًا للنسب.</p></div>
+      <div class="legend"><h4>علامات المراجعة</h4><p><i class="swatch unreviewed"></i> لم تراجع بعد</p><p><i class="swatch reviewed"></i> طابقت الصورة</p><p><i class="swatch uncertain"></i> تحتاج تصحيحًا</p></div>
+    </aside>
+    <section class="board-panel panel">
+      <div class="toolbar">
+        <div class="toolbar-main"><div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="ابحث بالاسم أو رقم الخلية…" autocomplete="off" aria-label="بحث في الأسماء"></div><select id="zoneSelect" aria-label="عرض مستويات الأجيال"><option value="الكل">كامل المشجرة</option></select><button class="btn btn-outline slim" id="toggleRef">◧ <span>الصورة</span></button></div>
+        <div class="toolbar-secondary"><button class="icon-btn" id="undoBtn" title="تراجع">↶</button><button class="icon-btn" id="redoBtn" title="إعادة">↷</button><span class="toolbar-divider"></span><button class="icon-btn" id="zoomOut" title="تصغير">−</button><span class="zoom-label" id="zoomLabel">٥٠٪</span><button class="icon-btn" id="zoomIn" title="تكبير">+</button><button class="btn btn-outline slim" id="fitBtn">احتواء الرسم</button><button class="btn btn-outline slim" id="fitBranchBtn">إظهار الفرع المحدد</button><button class="btn btn-primary slim" id="addRoot">+ خلية جديدة</button></div>
+      </div>
+      <div class="board-surface" id="boardSurface" tabindex="0" aria-label="لوحة شجرة العائلة، انقر لتحديد اسم واسحب الخلفية للتنقّل بين الصفوف">
+        <div class="board-stage" id="boardStage"><svg id="edgeLayer" width="2600" height="2500" viewBox="0 0 2600 2500" aria-hidden="true"><g id="zoneBackdrop"></g><g id="edgePaths"></g></svg><div id="nodeLayer"></div></div>
+        <div class="board-hint" id="boardHint">لكل فرع حيّزه المستقل دون تقاطع مع الفروع المجاورة · حدّد خلية لعرض ذريتها</div>
+        <div class="map-nav"><button id="nudgeFit" title="عرض الرسم كاملًا">⌗</button><span id="currentZone">المشجرة كاملة</span></div>
+        <div class="loading" id="boardLoading">جارٍ إعداد خلايا المشجرة…</div>
+      </div>
+      <div class="board-footer"><div><span class="footer-dot"></span><span id="saveState">تُحفظ التعديلات على هذا المتصفح تلقائيًا</span></div><div><button class="text-button" id="svgExport">تصدير رسم SVG</button><button class="text-button" id="importBtn">استيراد نسخة JSON</button><button class="text-button" id="resetBtn">استعادة المسودة الأصلية</button></div></div>
+    </section>
+    <aside class="inspector panel" id="inspector">
+      <div class="panel-heading"><div><span class="eyebrow">لوحة التعديل</span><h3>بيانات الخلية</h3></div><span class="record-id" id="selectedId">—</span></div>
+      <div class="empty-inspector" id="emptyInspector"><div class="empty-icon">✎</div><h4>اختر اسمًا من المشجرة</h4><p>اضغط على أي مربع لتعديل الاسم أو الأب أو حالة المراجعة، أو لإضافة خلية متفرّعة منه.</p><button class="btn btn-primary" id="emptyAdd">+ إنشاء خلية</button></div>
+      <form id="editForm" hidden>
+        <label>الاسم كما تريد ظهوره<input name="name" id="personName" required maxlength="140" autocomplete="off"></label>
+        <div class="double-fields"><label>حالة المطابقة<select name="review" id="reviewField"><option value="لم يراجع المستخدم">لم تراجع</option><option value="تمت المطابقة">تمت المطابقة ✓</option><option value="يحتاج تصحيحًا">يحتاج تصحيحًا !</option></select></label><label>وضوح القراءة<select name="reading" id="readingField"><option value="واضح مبدئيًا">واضح مبدئيًا</option><option value="تحتاج مراجعة">غير محسوم</option><option value="مقروء ومؤكد">مؤكد بعد المقارنة</option></select></label></div>
+        <label>الأب / الخلية المرتبطة<select name="parent" id="parentField"></select></label>
+        <label>ترتيب الميلاد بين الإخوة (اختياري)<input type="number" name="birthOrder" id="siblingOrder" min="1" max="99" step="1" placeholder="١ للأكبر، ٢ للذي يليه…"><small class="field-help">الرقم الأصغر يظهر أولًا من اليمين؛ عند غيابه نُبقي ترتيب السجلات المرفقة، دون افتراض عمر.</small></label>
+        <label>موضع الفرع في الصورة<select name="zone" id="personZone"><option>الأعلى</option><option>يسار الوسط</option><option>الوسط</option><option>أسفل اليسار</option><option>أسفل اليمين</option></select></label>
+        <label>ملاحظات المراجعة<textarea name="note" id="personNote" rows="4" placeholder="مثال: الحرف الأخير غير واضح، أو يلزم التحقق من صلة الأب…"></textarea></label>
+        <div class="position-section"><div><span>موقع الخلية المحسوب</span><small>تُولّد الإحداثيات تلقائيًا من الجيل والفرع، ولا يمكن رفع الابن إلى صف أبيه.</small></div><div><label>أفقي <input type="number" id="coordX" readonly></label><label>رأسي <input type="number" id="coordY" readonly></label></div></div>
+        <button class="btn btn-primary full" type="submit">حفظ التغييرات</button>
+        <div class="inspector-actions"><button type="button" class="btn btn-outline" id="addChild">+ إضافة ابن</button><button type="button" class="btn btn-outline" id="addSibling">+ إضافة أخ</button></div>
+        <button type="button" class="danger-link" id="deleteNode">حذف هذه الخلية</button>
+        <div class="node-context"><b>سلسلة النسب في هذه المسودة</b><p id="ancestryText"></p><span id="childrenCount"></span></div>
+      </form>
+      <div class="inspector-bottom"><span>كل خلية لها رقم مستقل حتى لو تكرر الاسم.</span></div>
+    </aside>
+  </main>
+  <input type="file" accept="application/json,.json" id="fileImport" hidden>
+  <dialog id="helpDialog" class="modal"><div class="modal-head"><h2>دليل التحرير والمطابقة</h2><button class="icon-btn" id="closeHelp" aria-label="إغلاق">×</button></div><ol><li><b>قارن الصورة بالرسم:</b> اختر الصورة الأمامية أو إحدى الزاويتين، ثم ابحث عن الاسم في شبكة الأجيال.</li><li><b>صحّح اسمًا:</b> اضغط المربع، حرّر الاسم والملاحظات وحالة المطابقة من اللوحة الجانبية، ثم احفظ.</li><li><b>صحّح الصلة:</b> غيّر «الأب / الخلية المرتبطة». ينتقل الابن وذريته إلى مستوياتهم الجديدة تلقائيًا مع منع الدوران.</li><li><b>رتّب الإخوة:</b> اكتب ترتيب الميلاد المتحقق منه (١ للأكبر). وإلا يُحافظ على ترتيب السجلات، دون ادعاء تحقق الأعمار.</li><li><b>تنقّل بين الأجيال:</b> اختر مجموعة الأجيال من القائمة، واسحب الخلفية للتنقّل أو استخدم التكبير والتصغير. مواضع الخلايا ثابتة للحفاظ على صفوف النسب.</li><li><b>أضف أو احذف:</b> يمكنك إضافة ابن أو أخ؛ عند حذف خلية تُربط خلايا أبنائها بأبيها، فلا تختفي عائلاتها دون قصد.</li><li><b>احتفظ بنسختك:</b> تحفظ المسودات محليًا وتتزامن مع البوابة عند توافر الصلاحية. صدّر JSON أو SVG بانتظام؛ يتضمن JSON نسخة من الإحداثيات السابقة إن كانت متاحة.</li></ol><p class="notice">ترتيب الأجيال محسوب من روابط الأبوة في المسودة، وليس إثباتًا لصحة النسب. ترتيب العمر بين الإخوة يحتاج بيانات موثقة لإظهاره بصورة صحيحة.</p><button class="btn btn-primary" id="gotIt">فهمت، ابدأ المراجعة</button></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
